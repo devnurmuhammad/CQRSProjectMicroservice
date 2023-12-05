@@ -12,8 +12,8 @@ public class Sale
     public int EmployeeId { get; set; }
     public Employee? Employee { get; set; }
 
-    [ForeignKey("ClienId")]
-    public int ClienId { get; set; }
+    [ForeignKey("ClientId")]
+    public int ClientId { get; set; }
     public Client? Client { get; set; }
 
     [ForeignKey("HouseId")]
