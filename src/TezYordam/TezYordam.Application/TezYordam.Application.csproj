@@ -16,4 +16,8 @@
     <ProjectReference Include="..\TezYordam.Domain\TezYordam.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\" />
+  </ItemGroup>
+
 </Project>
