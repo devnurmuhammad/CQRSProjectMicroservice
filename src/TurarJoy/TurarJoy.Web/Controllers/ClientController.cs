@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TurarJoy.Application.UseCases.Clients.Commands;
 using TurarJoy.Application.UseCases.Clients.Queries;
+using TurarJoy.Domain.Entities;
 using TurarJoy.Web.ViewModels;
 
 namespace TurarJoy.Web.Controllers
@@ -49,6 +50,21 @@ namespace TurarJoy.Web.Controllers
             };
 
             bool result = await _mediator.Send(client);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public async ValueTask<ActionResult<bool>> UpdateClient(UpdateClientCommand updateClientCommand)
+        {
+            bool result = await _mediator.Send(updateClientCommand);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async ValueTask<IActionResult> GetClientById(int Id)
+        {
+            
+            var result = await _mediator.Send(new GetClientCommandById() { Id = Id});
             return Ok(result);
         }
     }
