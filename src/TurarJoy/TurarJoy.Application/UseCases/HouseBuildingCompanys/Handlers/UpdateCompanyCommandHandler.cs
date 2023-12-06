@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.HouseBuildingCompanys.Handlers
 {
     public class UpdateCompanyCommandHandler : IRequestHandler<UpdateCompanyCommand, bool>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public UpdateCompanyCommandHandler(IApplicationDbContext applicationDbContext)
+        public UpdateCompanyCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
