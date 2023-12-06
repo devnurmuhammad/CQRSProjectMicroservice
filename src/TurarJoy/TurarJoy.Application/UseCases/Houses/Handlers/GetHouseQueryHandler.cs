@@ -8,9 +8,9 @@ namespace TurarJoy.Application.UseCases.Houses.Handlers
 {
     public class GetHouseQueryHandler : IRequestHandler<GetHouseQuery, IList<House>>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public GetHouseQueryHandler(IApplicationDbContext applicationDbContext)
+        public GetHouseQueryHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

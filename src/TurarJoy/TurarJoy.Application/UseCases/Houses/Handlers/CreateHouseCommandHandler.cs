@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Houses.Handlers
 {
     public class CreateHouseCommandHandler : AsyncRequestHandler<CreateHouseCommand>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public CreateHouseCommandHandler(IApplicationDbContext applicationDbContext)
+        public CreateHouseCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
