@@ -23,13 +23,11 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers
             }
             else
             {
-
                 result.FirstName = request.FirstName;
                 result.LastName = request.LastName;
                 result.Age = request.Age;
                 result.PassportNumber = request.PassportNumber;
                 result.PhoneNumber = request.PhoneNumber;
-
 
                 _applicationDbContext.Clients.Update(result);
                 await _applicationDbContext.SaveChangesAsync(cancellationToken);
