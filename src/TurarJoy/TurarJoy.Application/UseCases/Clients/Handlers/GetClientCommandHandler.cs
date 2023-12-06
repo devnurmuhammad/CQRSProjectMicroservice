@@ -17,7 +17,10 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers
 
         public async Task<IList<Client>> Handle(GetClientCommand request, CancellationToken cancellationToken)
         {
-            var result = await _applicationDbContext.Clients.ToListAsync();
+            var result = await _applicationDbContext.Clients
+                .Include(x => x.Sales)
+                .ThenInclude(y => y.Employee)
+                .ToListAsync();
             return result;
         }
     }

@@ -8,16 +8,21 @@ namespace TurarJoy.Application.UseCases.Employees.Handlers
 {
     public class GetEmployeeByIdCommandHandler : IRequestHandler<GetEmployeeCommandById, Employee>
     {
-        private readonly IApplicationDbContext? _applicationDbContext;
+        private readonly IApplicationDbContext _applicationDbContext;
 
-        public GetEmployeeByIdCommandHandler(IApplicationDbContext? applicationDbContext)
+        public GetEmployeeByIdCommandHandler(IApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
 
         public async Task<Employee> Handle(GetEmployeeCommandById request, CancellationToken cancellationToken)
         {
-            Employee result = await _applicationDbContext.Employees.FirstOrDefaultAsync(x => x.Id == request.Id);  
+            Employee? result = await _applicationDbContext
+                .Employees
+                .Include(x => x.Sales)
+                .ThenInclude(y => y.Employee)
+                .FirstOrDefaultAsync(x => x.Id == request.Id);
+
             if (result == null)
             {
                 return new Employee();

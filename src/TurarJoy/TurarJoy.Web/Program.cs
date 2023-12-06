@@ -1,7 +1,6 @@
-using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using TurarJoy.Application;
 using TurarJoy.Infrastructure;
-using TurarJoy.Infrastructure.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +13,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 //builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //{

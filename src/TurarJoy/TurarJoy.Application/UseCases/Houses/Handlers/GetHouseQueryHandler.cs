@@ -17,7 +17,10 @@ namespace TurarJoy.Application.UseCases.Houses.Handlers
 
         public async Task<IList<House>> Handle(GetHouseQuery request, CancellationToken cancellationToken)
         {
-            IList<House> houses = await _applicationDbContext.Houses.ToListAsync();
+            IList<House> houses = await _applicationDbContext.Houses
+                .Include(z => z.Sales)
+                .ThenInclude(x => x.Client)
+                .ToListAsync();
             return houses;
         }
     }

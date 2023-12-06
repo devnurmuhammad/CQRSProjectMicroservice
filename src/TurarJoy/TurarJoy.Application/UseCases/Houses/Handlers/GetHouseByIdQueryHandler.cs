@@ -17,7 +17,10 @@ namespace TurarJoy.Application.UseCases.Houses.Handlers
 
         public async Task<House> Handle(GetHouseByIdQuery request, CancellationToken cancellationToken)
         {
-            House house = await _applicationDbContext.Houses.FirstOrDefaultAsync(x => x.Id == request.Id);
+            House? house = await _applicationDbContext.Houses
+                .Include(x => x.Sales)
+                .ThenInclude(z => z.House)
+                .FirstOrDefaultAsync(x => x.Id == request.Id);
             if (house == null)
             {
                 return new House();
