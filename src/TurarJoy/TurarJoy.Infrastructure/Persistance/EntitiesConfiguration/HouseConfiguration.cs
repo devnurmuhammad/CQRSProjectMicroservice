@@ -12,3 +12,4 @@ namespace TurarJoy.Infrastructure.Persistance.EntitiesConfiguration
         }
     }
 }
+
