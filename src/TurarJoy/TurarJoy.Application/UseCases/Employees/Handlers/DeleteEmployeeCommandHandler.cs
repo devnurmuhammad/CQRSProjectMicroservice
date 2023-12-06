@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Employees.Handlers
 {
     public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand, bool>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public DeleteEmployeeCommandHandler(IApplicationDbContext applicationDbContext)
+        public DeleteEmployeeCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

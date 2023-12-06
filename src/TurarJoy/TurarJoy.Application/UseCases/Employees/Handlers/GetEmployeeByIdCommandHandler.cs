@@ -8,9 +8,9 @@ namespace TurarJoy.Application.UseCases.Employees.Handlers
 {
     public class GetEmployeeByIdCommandHandler : IRequestHandler<GetEmployeeCommandById, Employee>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public GetEmployeeByIdCommandHandler(IApplicationDbContext applicationDbContext)
+        public GetEmployeeByIdCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

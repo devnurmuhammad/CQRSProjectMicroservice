@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Employees.Handlers;
 
 public class CreateEmployeeCommandHandler : AsyncRequestHandler<CreateEmployeeCommand>
 {
-    private readonly IApplicationDbContext _applicationDbContext;
+    private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-    public CreateEmployeeCommandHandler(IApplicationDbContext applicationDbContext)
+    public CreateEmployeeCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
     {
         _applicationDbContext = applicationDbContext;
     }
