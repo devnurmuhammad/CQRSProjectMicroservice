@@ -8,9 +8,9 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers
 {
     public class GetClientCommandHandler : IRequestHandler<GetClientCommand, IList<Client>>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public GetClientCommandHandler(IApplicationDbContext applicationDbContext)
+        public GetClientCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
