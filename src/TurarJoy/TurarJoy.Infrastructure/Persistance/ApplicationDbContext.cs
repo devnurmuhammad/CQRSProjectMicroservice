@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TurarJoy.Application.Abstractions;
 using TurarJoy.Domain.Entities;
+using TurarJoy.Infrastructure.Persistance.EntitiesConfiguration;
 
 namespace TurarJoy.Infrastructure.Persistance;
 
@@ -10,7 +11,10 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         Database.Migrate();
     }
-
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new HouseBuildingCompanyConfiguration());
+    }
     public DbSet<Client> People { get; set; }
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Client> Clients { get; set; }
