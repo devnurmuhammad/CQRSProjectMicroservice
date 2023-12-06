@@ -11,5 +11,5 @@ public interface IApplicationDbContext
     public DbSet<House> Houses { get; set; }
     public DbSet<Sale> Sales { get; set; }
 
-    public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+    public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

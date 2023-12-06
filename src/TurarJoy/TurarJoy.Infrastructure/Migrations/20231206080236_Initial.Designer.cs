@@ -12,7 +12,7 @@ using TurarJoy.Infrastructure.Persistance;
 namespace TurarJoy.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231205135704_Initial")]
+    [Migration("20231206080236_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
