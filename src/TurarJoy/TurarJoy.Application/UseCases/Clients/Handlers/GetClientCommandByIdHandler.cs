@@ -14,6 +14,7 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers
         {
             _applicationDbContext = applicationDbContext;
         }
+
         public async Task<Client> Handle(GetClientCommandById request, CancellationToken cancellationToken)
         {
             var client = await _applicationDbContext.Clients.FirstOrDefaultAsync(x => x.Id == request.Id);
