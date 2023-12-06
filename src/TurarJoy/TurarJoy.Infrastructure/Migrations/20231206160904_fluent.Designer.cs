@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TurarJoy.Infrastructure.Persistance;
 
@@ -11,9 +12,10 @@ using TurarJoy.Infrastructure.Persistance;
 namespace TurarJoy.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231206160904_fluent")]
+    partial class fluent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,16 +134,6 @@ namespace TurarJoy.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("HouseBuildingCompany");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "Tashkent",
-                            Email = "MuradBuildings2023@gmail.com",
-                            Name = "Murad Buildings",
-                            PhoneNumber = "+998714522145"
-                        });
                 });
 
             modelBuilder.Entity("TurarJoy.Domain.Entities.Sale", b =>
