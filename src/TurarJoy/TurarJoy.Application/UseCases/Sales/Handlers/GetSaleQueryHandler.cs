@@ -8,9 +8,9 @@ namespace TurarJoy.Application.UseCases.Sales.Handlers
 {
     public class GetSaleQueryHandler : IRequestHandler<GetSalesQuery, IList<Sale>>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public GetSaleQueryHandler(IApplicationDbContext applicationDbContext)
+        public GetSaleQueryHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

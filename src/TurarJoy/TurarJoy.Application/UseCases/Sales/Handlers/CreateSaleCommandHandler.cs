@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Sales.Handlers
 {
     public class CreateSaleCommandHandler : AsyncRequestHandler<CreateSaleCommand>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public CreateSaleCommandHandler(IApplicationDbContext applicationDbContext)
+        public CreateSaleCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
