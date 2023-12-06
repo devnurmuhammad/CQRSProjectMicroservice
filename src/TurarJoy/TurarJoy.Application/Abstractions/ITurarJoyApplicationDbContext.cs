@@ -3,7 +3,7 @@ using TurarJoy.Domain.Entities;
 
 namespace TurarJoy.Application.Abstractions;
 
-public interface IApplicationDbContext
+public interface ITurarJoyApplicationDbContext
 {
     public DbSet<Client> Clients { get; set; }
     public DbSet<Employee> Employees { get; set; }
