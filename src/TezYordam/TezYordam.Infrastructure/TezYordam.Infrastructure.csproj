@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TezYordam.Application\TezYordam.Application.csproj" />
-    <ProjectReference Include="..\TezYordam.Domain\TezYordam.Domain.csproj" />
   </ItemGroup>
 
 </Project>

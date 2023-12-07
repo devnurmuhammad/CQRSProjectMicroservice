@@ -6,9 +6,9 @@ using TezYordam.Infrastructure.Persistance;
 
 namespace TezYordam.Infrastructure;
 
-public static class DependencyInjection
+public static class TezYordamInDependencyInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection TYInfAddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ITezYordamApplicationDbContext, ApplicationDbContext>(options =>
         {
