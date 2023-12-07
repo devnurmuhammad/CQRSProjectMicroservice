@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace TezYordam.Application
 {
-    public static class DependencyInjection
+    public static class TezYordamDependencyInjection
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
