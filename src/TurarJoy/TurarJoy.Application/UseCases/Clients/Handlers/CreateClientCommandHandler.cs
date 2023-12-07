@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers;
 
 public class CreateClientCommandHandler : AsyncRequestHandler<CreateClientCommand>
 {
-    private readonly IApplicationDbContext _applicationDbContext;
+    private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-    public CreateClientCommandHandler(IApplicationDbContext applicationDbContext)
+    public CreateClientCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
     {
         _applicationDbContext = applicationDbContext;
     }

@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers
 {
     public class UpdateClientCommandHandler : IRequestHandler<UpdateClientCommand, bool>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public UpdateClientCommandHandler(IApplicationDbContext applicationDbContext)
+        public UpdateClientCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

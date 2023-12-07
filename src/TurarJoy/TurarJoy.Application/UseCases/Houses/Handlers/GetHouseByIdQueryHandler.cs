@@ -8,9 +8,9 @@ namespace TurarJoy.Application.UseCases.Houses.Handlers
 {
     public class GetHouseByIdQueryHandler : IRequestHandler<GetHouseByIdQuery, House>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public GetHouseByIdQueryHandler(IApplicationDbContext applicationDbContext)
+        public GetHouseByIdQueryHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

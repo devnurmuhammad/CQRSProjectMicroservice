@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Employees.Handlers
 {
     public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand, bool>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public UpdateEmployeeCommandHandler(IApplicationDbContext applicationDbContext)
+        public UpdateEmployeeCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

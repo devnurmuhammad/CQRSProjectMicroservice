@@ -5,7 +5,7 @@ using TurarJoy.Infrastructure.Persistance.EntitiesConfiguration;
 
 namespace TurarJoy.Infrastructure.Persistance;
 
-public class ApplicationDbContext : DbContext, IApplicationDbContext
+public class ApplicationDbContext : DbContext, ITurarJoyApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
@@ -21,5 +21,4 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<HouseBuildingCompany> HouseBuildingCompany { get; set; }
     public DbSet<House> Houses { get; set; }
     public DbSet<Sale> Sales { get; set; }
-
 }

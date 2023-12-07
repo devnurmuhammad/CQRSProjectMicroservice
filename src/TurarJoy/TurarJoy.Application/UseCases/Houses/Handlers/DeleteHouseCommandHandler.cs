@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Houses.Handlers
 {
     public class DeleteHouseCommandHandler : IRequestHandler<DeleteHouseCommand, bool>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public DeleteHouseCommandHandler(IApplicationDbContext applicationDbContext)
+        public DeleteHouseCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }

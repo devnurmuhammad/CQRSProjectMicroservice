@@ -7,9 +7,9 @@ namespace TurarJoy.Application.UseCases.Clients.Handlers
 {
     public class DeleteClientCommandHandler : IRequestHandler<DeleteClientCommand, bool>
     {
-        private readonly IApplicationDbContext _applicationDbContext;
+        private readonly ITurarJoyApplicationDbContext _applicationDbContext;
 
-        public DeleteClientCommandHandler(IApplicationDbContext applicationDbContext)
+        public DeleteClientCommandHandler(ITurarJoyApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
