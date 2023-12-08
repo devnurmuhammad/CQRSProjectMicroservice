@@ -1,0 +1,34 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/GetAllCall",
+      "UpstreamHttpMethod": [ "GET", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tezyordam.web",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Call/GetAllCall"
+    },
+
+    {
+      "UpstreamPathTemplate": "/GetAllSales",
+      "UpstreamHttpMethod": [ "GET", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "turarjoy.web",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Sales/GetAllSales"
+    }
+
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8015"
+  }
+} 
