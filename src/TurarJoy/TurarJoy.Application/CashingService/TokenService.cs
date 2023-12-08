@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace JWTGetToken.Services
+namespace TurarJoy.Application.CashingService
 {
     public class TokenService : ITokenService
     {
