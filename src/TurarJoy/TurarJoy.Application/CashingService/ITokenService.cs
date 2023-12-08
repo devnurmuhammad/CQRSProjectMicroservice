@@ -1,4 +1,4 @@
-﻿namespace JWTGetToken.Services
+﻿namespace TurarJoy.Application.CashingService
 {
     public interface ITokenService
     {

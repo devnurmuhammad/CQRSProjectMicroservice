@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace JWTtoken.Services.Security
+namespace TurarJoy.Application.CashingService
 {
     public class Hash512
     {
