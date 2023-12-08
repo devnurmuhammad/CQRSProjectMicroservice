@@ -12,7 +12,7 @@ public static class TezYordamInDependencyInjection
     {
         services.AddDbContext<ITezYordamApplicationDbContext, ApplicationDbContext>(options =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("ConnectionString"));
+            options.UseSqlServer(configuration.GetConnectionString("ConnectionStringDoc"));
         });
 
         return services;
