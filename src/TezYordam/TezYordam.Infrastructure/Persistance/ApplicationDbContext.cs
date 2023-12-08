@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using TezYordam.Application.Abstractions;
 using TezYordam.Domain.Entities;
 using TezYordam.Infrastructure.Persistance.EntitiesConfiguration;
@@ -9,7 +11,25 @@ public class ApplicationDbContext : DbContext, ITezYordamApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
-        Database.Migrate();
+        var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
+        try
+        {
+            if (databaseCreator is null)
+            {
+                throw new Exception("Database Not Found!");
+            }
+
+            if (!databaseCreator.CanConnect())
+                databaseCreator.CreateAsync();
+
+            if (!databaseCreator.HasTables())
+                databaseCreator.CreateTablesAsync();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
