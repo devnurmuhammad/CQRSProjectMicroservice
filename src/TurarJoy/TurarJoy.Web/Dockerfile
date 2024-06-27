@@ -8,6 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["ExamProjectMicroservice/src/TurarJoy/TurarJoy.Web/TurarJoy.Web.csproj", "ExamProjectMicroservice/src/TurarJoy/TurarJoy.Web/"]
+COPY ["ExamProjectMicroservice/src/TurarJoy/TurarJoy.Infrastructure/TurarJoy.Infrastructure.csproj", "ExamProjectMicroservice/src/TurarJoy/TurarJoy.Infrastructure/"]
+COPY ["ExamProjectMicroservice/src/TurarJoy/TurarJoy.Application/TurarJoy.Application.csproj", "ExamProjectMicroservice/src/TurarJoy/TurarJoy.Application/"]
+COPY ["ExamProjectMicroservice/src/TurarJoy/TurarJoy.Domain/TurarJoy.Domain.csproj", "ExamProjectMicroservice/src/TurarJoy/TurarJoy.Domain/"]
 RUN dotnet restore "ExamProjectMicroservice/src/TurarJoy/TurarJoy.Web/TurarJoy.Web.csproj"
 COPY . .
 WORKDIR "/src/ExamProjectMicroservice/src/TurarJoy/TurarJoy.Web"
